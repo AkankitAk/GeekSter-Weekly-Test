@@ -13,7 +13,7 @@ import java.util.Map;
 @RequestMapping("/restaurant-api")
 public class RestaurantController {
     @Autowired
-    RestaurantService restaurantService;
+    private RestaurantService restaurantService;
     @PostMapping("/add-restaurant")
     public Restaurant add(@RequestBody Restaurant restaurant){
         return restaurantService.add(restaurant);

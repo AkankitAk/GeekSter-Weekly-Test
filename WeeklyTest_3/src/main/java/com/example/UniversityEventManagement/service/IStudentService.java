@@ -7,7 +7,7 @@ import java.util.List;
 public interface IStudentService {
     public List<Student> findAll();
     public Student findById(int id) ;
-    public void addTodo(Student student);
+    public void addStudent(Student student);
     public void deleteStudent(int id) ;
     public void updateStudent(int id,String department) ;
 }

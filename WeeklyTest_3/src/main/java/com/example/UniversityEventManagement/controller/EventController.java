@@ -14,7 +14,7 @@ public class EventController {
     IEventService iEventService;
 
     @PostMapping("/addEvent")
-    public String addStudent(@RequestBody Event event){
+    public String addEvent(@RequestBody Event event){
         iEventService.addEvent(event);
         return "Event add Successfully Event id: "+event.getEventId()+" "+event.getEventName();
     }

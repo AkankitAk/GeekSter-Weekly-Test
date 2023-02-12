@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 public class StudentService implements IStudentService {
-    private static List<Student> todos=new ArrayList<>();
+    private static List<Student> students=new ArrayList<>();
     @Autowired
     IStudentRepo iStudentRepo;
     @Override
@@ -24,7 +24,7 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void addTodo(Student student) {
+    public void addStudent(Student student) {
         iStudentRepo.save(student);
     }
 

@@ -15,7 +15,7 @@ public class StudentController {
 
     @PostMapping("/addStudent")
     public String addStudent(@RequestBody Student student){
-        iStudentService.addTodo(student);
+        iStudentService.addStudent(student);
         return "Student add Successfully Student id: "+student.getStudentId()+" "+student.getFirstName();
     }
 

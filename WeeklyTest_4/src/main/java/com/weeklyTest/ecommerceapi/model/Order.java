@@ -13,13 +13,14 @@ import javax.persistence.*;
 @Table(name = "tbl_order")
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_id")
     private Integer orderId;
     @JoinColumn(name = "user_id")
     @ManyToOne
     private User userId;
     @JoinColumn(name = "product_id")
-    @ManyToOne
+    @OneToOne
     private Product productId;
     @JoinColumn(name = "address_id")
     @ManyToOne

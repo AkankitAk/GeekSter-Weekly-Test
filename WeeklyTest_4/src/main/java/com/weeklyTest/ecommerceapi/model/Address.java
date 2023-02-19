@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Table(name = "tbl_address")
 public class Address {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "address_id")
     private Integer addressId;
     @Column(name = "address")
@@ -23,7 +24,6 @@ public class Address {
     private String zipCode;
     @Column(name = "state")
     private String state;
-
     @JoinColumn(name = "user_id")
     @ManyToOne
     private User userId;

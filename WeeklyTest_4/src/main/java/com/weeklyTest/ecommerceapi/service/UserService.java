@@ -13,4 +13,8 @@ public class UserService {
         userRepo.save(user);
         return "save user";
     }
+
+    public User getUserById(Integer userId) {
+        return userRepo.getById(userId);
+    }
 }

@@ -12,4 +12,11 @@ public class OrderService {
     public String saveOrder(Order order) {
         return "save Order";
     }
+
+    public com.weeklyTest.ecommerceapi.model.Order getOder(Integer orderId) {
+        if(orderRepo.findById(orderId).isPresent())
+            return orderRepo.findById(orderId).get();
+        else
+            return null;
+    }
 }

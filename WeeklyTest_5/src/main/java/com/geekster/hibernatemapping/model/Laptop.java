@@ -4,25 +4,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tbl_student")
+@Table(name = "tbl_laptop")
 
-public class Student {
+public class Laptop {
     @Id
     private String ID;
     private String name;
-    private String age;
-    private String phoneNumber;
-    private String branch;
-    private String department;
-    @Embedded
-    private Address address;
+    private String brand;
+    private Integer price;
+
+    @OneToOne
+    private Student student;
 }

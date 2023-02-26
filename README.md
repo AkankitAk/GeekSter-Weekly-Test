@@ -1,10 +1,11 @@
-# Weekly Test 4 -(26/02/2023)
+# Weekly Test 5 -(26/02/2023)
 
 ## Frameworks and language
 * Framework : Spring,SpringBoot
 * Language : java (Version 17)
 
 ## Data flow
+
     Controller
 
 * StudentController
@@ -30,7 +31,6 @@
 
 
     Service
-
 * StudentService
   
 * LaptopService
@@ -64,6 +64,7 @@
   * Book 
   * Course.
 * Using this project we map other model info into another model by hibernet mapping. -using this project we can manage student info which course student have enroll and which laptop use etc.
+  
   
 # Weekly Test 4 -(19/02/2023)
 ## Frameworks and language

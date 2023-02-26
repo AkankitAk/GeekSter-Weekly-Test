@@ -5,16 +5,16 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.9</version>
+		<version>3.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.geekster</groupId>
-	<artifactId>hibernate-mapping</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>dataBase_Relationship</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hibernate-mapping</name>
-	<description>Demo project for Spring Boot</description>
+	<name>dataBase_Relationship</name>
+	<description>DataBase_Relationship project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -47,13 +47,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.json/json -->
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20220924</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>

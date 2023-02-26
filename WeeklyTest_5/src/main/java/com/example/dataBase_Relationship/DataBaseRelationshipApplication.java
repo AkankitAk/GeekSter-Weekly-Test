@@ -1,13 +1,13 @@
-package com.geekster.hibernatemapping;
+package com.example.dataBase_Relationship;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HibernateMappingApplication {
+public class DataBaseRelationshipApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HibernateMappingApplication.class, args);
+		SpringApplication.run(DataBaseRelationshipApplication.class, args);
 	}
 
 }

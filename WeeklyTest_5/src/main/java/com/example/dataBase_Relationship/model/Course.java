@@ -1,13 +1,10 @@
-package com.geekster.hibernatemapping.model;
+package com.example.dataBase_Relationship.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,16 +12,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tbl_course")
-
+@Table
 public class Course {
     @Id
-    private String ID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer courseId;
     private String title;
     private String description;
     private String duration;
 
     @ManyToMany
     List<Student> studentList = new ArrayList<>();
-
 }

@@ -1,23 +1,19 @@
-package com.geekster.hibernatemapping.model;
+package com.example.dataBase_Relationship.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tbl_laptop")
-
+@Table
 public class Laptop {
     @Id
-    private String ID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer ID;
     private String name;
     private String brand;
     private Integer price;

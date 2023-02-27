@@ -1,4 +1,72 @@
-# Weekely Test 4 -(19/02/2023)
+# Weekly Test 5 -(26/02/2023)
+
+## Frameworks and language
+* Framework : Spring,SpringBoot
+* Language : java (Version 17)
+
+## Data flow
+
+    Controller
+
+* StudentController
+  * getStudent
+  * addStudent
+  * deleteStudent
+  * updateStudent
+* LaptopController
+  * getLaptop
+  * addLaptop
+  * deleteLaptop
+  * updateLaptop
+* CourseController
+  * getCourse
+  * addCourse
+  * deleteCourse
+  * updateCourse
+* BookController
+  * getBook
+  * addBook
+  * deleteBook
+  * updateBook
+
+
+    Service
+* StudentService
+  
+* LaptopService
+  
+* CourseService
+  
+* BookService
+
+
+    dao
+
+* StudentRepo
+
+* LaptopRepo
+
+* CourseRepo
+
+* BookRepo
+
+
+## Data Structure used in project
+
+* List
+
+## Project Summary
+
+* In this project we have created 5 models namely :- 
+  * Student 
+  * Address
+  * Laptop
+  * Book 
+  * Course.
+* Using this project we map other model info into another model by hibernet mapping. -using this project we can manage student info which course student have enroll and which laptop use etc.
+  
+  
+# Weekly Test 4 -(19/02/2023)
 ## Frameworks and language
 
 * Framework : Spring,SpringBoot
@@ -20,7 +88,7 @@
 * UserController
   * saveUser()
   * getUserById()
-#
+
     Service
 * getOrderByOrderId( ) -- This function will return all the details of an order.
 * getUserByUserId( ) -- This function will return a user corresponding to it's userId.

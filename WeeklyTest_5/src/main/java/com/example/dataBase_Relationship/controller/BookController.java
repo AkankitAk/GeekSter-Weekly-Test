@@ -6,9 +6,12 @@ import com.example.dataBase_Relationship.model.Book;
 import com.example.dataBase_Relationship.model.Student;
 import com.example.dataBase_Relationship.service.BookService;
 import com.example.dataBase_Relationship.service.StudentService;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,49 +20,52 @@ import java.util.List;
 public class BookController {
     @Autowired
     private BookService bookService;
-
-    private StudentService studentService;
+    @Autowired
+    private StudentRepo studentRepo;
     @PostMapping("/book")
-    public ResponseEntity<String> addBook(@RequestBody Book bookRequest){
-        Book book=setBook(bookRequest);
-        int bookId=bookService.addBook(book);
-        return new ResponseEntity<>("book add successfully"+bookId, HttpStatus.CREATED);
+    public ResponseEntity<String> addBook(@RequestBody String newBook){
+        Book book=setBook(newBook);
+        int bookId=bookService.saveBook(book);
+        return new ResponseEntity<>("Book save with Book id- "+bookId , HttpStatus.CREATED);
     }
 
-    private Book setBook(Book bookRequest) {
+    private Book setBook(String newBook) {
+        JSONObject bookObject=new JSONObject(newBook);
         Student student=null;
-
-        Student studentDetails=studentService.getStudentById(bookRequest.getBookId());
-
-//        if(studentRepo.findById(studentId).isPresent()){
-//            student=studentRepo.findById(studentId).get();
-//        }
-//        else {
-//            return null;
-//        }
+        int studentId=bookObject.getInt("student");
+        if(studentRepo.findById(studentId).isPresent()){
+            student=studentRepo.findById(studentId).get();
+        }
+        else {
+            return null;
+        }
         Book book=new Book();
-        book.setStudent(studentDetails);
-        book.setBookTitle(bookRequest.getBookTitle());
-        book.setAuthor(bookRequest.getAuthor());
-        book.setDescription(bookRequest.getDescription());
-        book.setPrice(bookRequest.getPrice());
+        book.setBookTitle(bookObject.getString("bookTitle"));
+        book.setAuthor(bookObject.getString("author"));
+        book.setDescription(bookObject.getString("description"));
+        book.setPrice(bookObject.getString("price"));
+        book.setStudent(student);
+
         return book;
     }
-
-    @GetMapping("book/{bookId}")
-    public Book getBookById(@PathVariable Integer bookId){
-        return bookService.getBookById(bookId);
-    }
-    @GetMapping("/book")
-    public List<Book> getAllBooks(){
-        return bookService.getAllBooks();
+    @GetMapping(value = "/book")
+    public ResponseEntity<String> getStudent(@Nullable @RequestParam  String bookId){
+        JSONArray bookList=bookService.getBook(bookId);
+        return new ResponseEntity<>(bookList.toString(),HttpStatus.OK);
     }
     @PutMapping("/book/{bookId}")
-    public Book updateBook(@PathVariable Integer bookId,@RequestBody Book book){
-        return bookService.updateBook(bookId,book);
+    public ResponseEntity<String> updateStudent(@PathVariable Integer bookId,@RequestBody String updateBook){
+        Book book=setBook(updateBook);
+        bookService.updateBook(bookId,book);
+        return new ResponseEntity<>("Book updated successfully ",HttpStatus.OK);
     }
     @DeleteMapping("/book/{bookId}")
-    public void deleteBook(@PathVariable Integer bookId){
-        bookService.deleteBook(bookId);
+    public ResponseEntity<String> deleteBook(@PathVariable Integer bookId) {
+        boolean status = bookService.deleteBook(bookId);
+        if (status) {
+            return new ResponseEntity<>("Delete Book successfully book id- " + bookId, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Book id doesNot Exist book id- " + bookId, HttpStatus.BAD_REQUEST);
+        }
     }
 }

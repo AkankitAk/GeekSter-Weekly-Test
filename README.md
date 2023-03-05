@@ -35,8 +35,8 @@
 
 
 
-
 ## Post man link 
+* If you want to use this project first clone this project and pate the given postman link in postman . In this way you can use the project abd run it to see how the output will come.
 * https://api.postman.com/collections/24994942-de44a089-8a5d-46f0-a65e-beb550106193?access_key=PMAT-01GTRV9C6DZ7J8Z4V1VW23ZFSC
 
 

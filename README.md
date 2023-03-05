@@ -32,6 +32,16 @@
 
 * In this project we are fetching data by writing native query of Sql.
 * Any user can get any type of data by filtering.
+
+
+
+
+## Post man link 
+* https://api.postman.com/collections/24994942-de44a089-8a5d-46f0-a65e-beb550106193?access_key=PMAT-01GTRV9C6DZ7J8Z4V1VW23ZFSC
+
+
+
+
 # Weekly Test 5 -(26/02/2023)
 
 ## Frameworks and language

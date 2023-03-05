@@ -1,3 +1,37 @@
+# Weekly Test 6 -(05/03/2023)
+
+## Frameworks and language
+* Framework : Spring,SpringBoot
+* Language : java (Version 11)
+
+## Data flow
+
+    Controller
+
+* StudentController
+  * SaveStudent() - Create new Studnet
+  * getStudent() - By id if id is not pass then return all student.
+  * getStudentByFirstName() - Search student by first name.
+  * getStudentByLastName() - Search student by last name.
+  * getStudentByAge() - Search student by age.
+  * getStudentByAge() - Search student by age is greater then the giver pass value.
+  * getStudentByName() - Search student by first name or last name.
+#
+    Service    
+*   Here we will write the logic of all the requests that have come from the controller.
+#
+
+    Dao
+* Here we will write the Query to fetch the code from the database whatever the user has requested .
+
+## Data Structure used in project
+
+* Here we are using hasMap and List data structure.
+
+## Project Summary
+
+* In this project we are fetching data by writing native query of Sql.
+* Any user can get any type of data by filtering.
 # Weekly Test 5 -(26/02/2023)
 
 ## Frameworks and language

@@ -1,4 +1,42 @@
-# Weekly Test 6 -(05/03/2023)
+# Weekly Test 7 (AWS Deployment) -(12/03/2023)
+
+## Frameworks and language
+* Framework : Spring,SpringBoot
+* Language : java (Version 17)
+
+## Data flow
+
+    Controller
+
+* PostController
+    * SavePost() - Create new post
+    * getPost() - get all post.
+#
+    Service    
+*   Here we will write the logic of all the requests that have come from the controller.
+#
+
+    Dao
+* Here we will write the Query to fetch the code from the database whatever the user has requested .
+
+## Data Structure used in project
+
+* Here we are using List data structure.
+
+## Project Summary
+
+* In this project we are deploying the project on **AWS live**.
+* Any user can get any type of data by filtering.
+
+
+
+## Swagger Link to test our Online project
+  > http://3.145.104.105:8080/swagger-ui/index.html#/post-controller/getPost
+
+
+
+
+# Weekly Test 6 (we write SQL Command)-(05/03/2023)
 
 ## Frameworks and language
 * Framework : Spring,SpringBoot
